@@ -1,0 +1,37 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Update A Post</title>
+    <link rel="stylesheet" href="../static/style.css">
+</head>
+<body>
+<h1>Welcome, Please Update your Post Details!</h1>
+<h1>Want to go back to the Home Page? <a href="/">Click Here!</a></h1>
+<div class="container">
+    <div class="form">
+        <form class="form" action="{{ url_for('update', post_id=post.id) }}" method="POST">
+            <div class="inputs">
+                <label for="author">New Author:</label>
+                <input type="text" id="author" name="author" value="{{ post.author }}" placeholder="Author">
+            </div>
+
+            <div class="inputs">
+                <label for="title">New Title:</label>
+                <input type="text" id="title" name="title" value="{{ post.title }}" placeholder="Title">
+            </div>
+
+            <div class="inputs">
+                <label for="content">New Content:</label>
+                <textarea id="content" name="content" rows="4" placeholder="Content">{{ post.content }}</textarea>
+            </div>
+
+            <div class="inputs">
+                <button type="submit">Submit Post</button>
+            </div>
+        </form>
+    </div>
+</div>
+</body>
+</html>
