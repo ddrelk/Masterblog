@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Add A Post</title>
+    <link rel="stylesheet" href="../static/style.css">
+</head>
+<body>
+<h1>Welcome, Please Add Blog Post!</h1>
+<h2>Back to the Home Page? <a href="/">Click Here!</a></h2>
+<div class="container">
+    <div class="form">
+        <form class="form" action="{{ url_for('add') }}" method="POST">
+            <div class="inputs">
+                <label for="author"><strong>Author:</strong></label>
+                <input type="text" id="author" name="author" required>
+            </div>
+
+            <div class="inputs">
+                <label for="title"><strong>Title:</strong></label>
+                <input type="text" id="title" name="title" required>
+            </div>
+
+            <div class="inputs">
+                <label for="content"><strong>Content:</strong></label>
+                <textarea id="content" name="content" rows="4" required></textarea>
+            </div>
+
+            <div class="inputs">
+                <button type="submit">Submit Post</button>
+            </div>
+        </form>
+    </div>
+</div>
+</body>
+</html>
